@@ -1,0 +1,12 @@
+.user-item {
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 0.5rem;
+}
+
+.user-item--inactive {
+  background-color: var(--INACTIVE);
+}
+
+.user-item__name {
+  font-weight: 700;
+}

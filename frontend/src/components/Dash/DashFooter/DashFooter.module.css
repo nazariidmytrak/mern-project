@@ -1,0 +1,20 @@
+.dash-footer {
+  font-size: 1.3rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  background-color: var(--BGCOLOR);
+  padding: 0.5rem 1.5rem;
+  border-top: 1px solid var(--WHITE);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  color: var(--WHITE);
+}
+
+@media screen and (max-width: 576px) {
+  .dash-footer {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}

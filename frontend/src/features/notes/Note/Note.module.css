@@ -1,0 +1,30 @@
+.note-item {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media screen and (max-width: 991px) {
+  .note-item {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .note-item__created,
+  .note-item__updated,
+  .note-item__username {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .note-item__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .note-item__title {
+    max-width: 80px;
+  }
+}

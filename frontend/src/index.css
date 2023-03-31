@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || VARIABLES */
+
+:root {
+  /* COLORS */
+  --BGCOLOR: #1b2642;
+  --WHITE: #fff;
+  --BLACK: #000;
+  --HOVER: #b6d5b5;
+  --ERROR: firebrick;
+  --INACTIVE: lightgray;
+  --NOTE-BGCOLOR: hsla(240, 64%, 27%, 0.65);
+}
+
+/* || UTILITY CLASSES */
+.errmsg {
+  display: inline-block;
+  background-color: var(--TABLE-BGCOLOR);
+  color: var(--ERROR);
+  padding: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.icon-button {
+  width: 30px;
+  height: 30px;
+  font-size: 2.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--WHITE);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease 0s;
+}
+
+.icon-button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-button:hover {
+  color: var(--HOVER);
+}
+
+.icon-button[disabled] {
+  visibility: hidden;
+}
+
+/* || GENERAL STYLES */
+
+body {
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background-color: var(--BGCOLOR);
+  color: var(--WHITE);
+  background-image: url('./img/background.jpg');
+  background-size: cover;
+  background-position: top right;
+  background-blend-mode: multiply;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  /* React root div */
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+a,
+a:visited {
+  color: var(--WHITE);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--HOVER);
+}
+
+.list-content {
+  background-color: var(--WHITE);
+  color: var(--BLACK);
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  justify-items: center;
+  font-size: 1.2rem;
+}
+.list-header {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--BLACK);
+  border-radius: 1rem;
+}
+.list-header h3 {
+  font-size: 1.7rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.list-header h3:not(:last-child):after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 185%;
+  top: -16px;
+  width: 2px;
+  background-color: var(--BLACK);
+}
+.list-items {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+}
+
+.list-item {
+  border: 2px solid var(--BLACK);
+  border-radius: 1rem;
+  display: grid;
+  justify-items: center;
+  padding: 1rem;
+  align-items: center;
+}
+
+.list-item__button {
+  padding: 0.2rem 1rem;
+  border: 1px solid var(--BLACK);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  background-color: var(--WHITE);
+}
+
+.list-item__button:hover {
+  background-color: var(--HOVER);
+}
+
+/* || FORM -GENERAL */
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.75em;
+  max-width: 800px;
+}
+
+.form__checkbox-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.5em;
+}
+
+.form__persist {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.form__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__input,
+.form__submit-button {
+  padding: 0.5em;
+  border-radius: 15px;
+}
+
+.form__input--text {
+  min-height: 150px;
+}
+
+.form__input--incomplete {
+  border: 1px solid var(--INPUT-INVALID);
+  outline: 1px solid var(--INPUT-INVALID);
+}
+
+.form__checkbox {
+  width: 24px;
+  height: 24px;
+}
+
+.form__select {
+  width: fit-content;
+  padding: 0.25em;
+}
+
+.form__action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+  position: absolute;
+  right: 0.5em;
+}
+
+.form__row {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2em;
+}
+
+.form__divider {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+}
+
+/* || MEDIA */
+@media screen and (max-width: 767px) {
+  .list-header {
+    padding: 0.3rem;
+  }
+  .list-header h3 {
+    font-size: 1.2rem;
+  }
+  .list-header h3::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .list-item {
+    padding: 0.5rem 0.2rem;
+    font-size: 1rem;
+  }
+}

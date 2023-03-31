@@ -1,0 +1,14 @@
+.notes-list__header {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media screen and (max-width: 991px) {
+  .notes-list__header {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .notes-list__created,
+  .notes-list__updated,
+  .notes-list__owner {
+    display: none;
+  }
+}
